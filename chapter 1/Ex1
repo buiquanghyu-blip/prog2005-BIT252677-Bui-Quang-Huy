@@ -1,0 +1,7 @@
+so_nguyen = 10
+so_thuc = 3.14
+chuoi = "Bằng!!"
+
+print("Số nguyên:", so_nguyen)
+print("Số thực:", so_thuc)
+print("Anh tên là", chuoi)
