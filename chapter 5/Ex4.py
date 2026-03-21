@@ -1,11 +1,17 @@
+import pandas as pd
 import matplotlib.pyplot as plt
 
-labels = ['A', 'B', 'C', 'D', 'E']
-sizes = [30, 25, 15, 20, 10]
+df = pd.read_csv("california_cities.csv")
+
+top10 = df.sort_values(by="area_total_km2", ascending=False).head(10)
 
 plt.figure()
-plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.barh(top10["city"], top10["area_total_km2"])
 
-plt.title("Tỷ lệ doanh số các sản phẩm")
+plt.gca().invert_yaxis()
+
+plt.title("Top 10 thành phố lớn nhất California (theo diện tích)")
+plt.xlabel("Diện tích (km²)")
+plt.ylabel("Thành phố")
 
 plt.show()
